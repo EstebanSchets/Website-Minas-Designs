@@ -1,0 +1,248 @@
+.designs-page {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* Center the overlay */
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #FFF;
+  /* White background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  /* Stack children vertically */
+  margin-top: 150px;
+  align-items: center;
+}
+
+.cutout {
+  width: 500px;
+  height: 500px;
+  background-size: cover;
+  background-position: center;
+  clip-path: circle(250px at center);
+  /* Create a circle cutout */
+  position: absolute;
+  /* We’ll position each cutout absolutely within the overlay */
+}
+
+.left-cutout {
+  /*background-repeat: no-repeat;*/
+  left: 350px;
+  /* Center horizontally */
+  top: -420px;
+  /* Center vertically */
+  /*transform: translate(-100%, -100%); /* Offset to the top left */
+}
+
+.right-cutout {
+  /*background-repeat: no-repeat;*/
+  left: 1050px;
+  /* Center horizontally */
+  top: 300px;
+  /* Center vertically */
+  /*transform: translate(0%, 50%); /* Offset to the bottom right */
+}
+
+.introduction {
+  width: 100%;
+  padding: 20px;
+  text-align: center;
+  z-index: 20;
+  position: absolute;
+  top: 11%;
+  /* Increase this value to move the introduction text down */
+  left: 0;
+}
+
+.image-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+  margin-bottom: 20px;
+  /* Space between image containers */
+  position: relative;
+}
+
+.cutout-text {
+  margin-left: 300px;
+  /* Space between the cutout and text */
+  z-index: 20;
+}
+
+/* Base styles for all text boxes */
+.text-box {
+  border: 1px solid rgb(255, 255, 255);
+  padding: 20px;
+  width: 400px;
+  /* Set this to whatever width you want */
+  height: 400px;
+  /* This will expand to fit the content */
+  box-sizing: border-box;
+  position: absolute;
+  /* Position absolutely within the nearest relative container */
+  font-family: 'Arial', sans-serif;
+  /* Choose your preferred font */
+  font-size: 12px;
+  /* overrided by funct font size per title and text */
+  color: #333;
+  /* Any color you prefer */
+  line-height: 1.6;
+  /* Adjusts the space between lines */
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
+  /* Makes all text uppercase */
+  font-weight: 700;
+  /* Montserrat's bold weight */
+  text-align: left;
+}
+
+/* Styles for the first text box */
+.text-box-one {
+  position: absolute;
+  top: -510px;
+  /* Distance from the top of the nearest positioned ancestor */
+  left: 1100px;
+  /* Distance from the left of the nearest positioned ancestor */
+  /* You can adjust these pixel values to place the box exactly where you want */
+}
+
+/* Styles for the second text box */
+.text-box-two {
+  position: absolute;
+  top: 180px;
+  /* Distance from the top of the nearest positioned ancestor */
+  left: 400px;
+  /* Distance from the left of the nearest positioned ancestor */
+  /* Adjust these values as needed for precise placement */
+}
+
+.feature {
+  text-align: left;
+  /* Centering the content */
+}
+
+.feature-icon {
+  width: 25px;
+  /* overiden by .icon*/
+  height: auto;
+  margin-bottom: 10px;
+  /* Space between icon and title */
+}
+
+.feature-title {
+  font-size: 22px;
+  /* Adjust as needed */
+  margin-bottom: 15px;
+  /* Space between title and description */
+}
+
+.feature-description {
+  font-size: 14px;
+  /* Smaller font size for description */
+  color: #797474;
+}
+
+.feature-divider {
+  border: none;
+  height: 2px;
+  background-color: #ccc;
+  /* Or any color you prefer */
+  margin: 20px 0;
+  /* Space above and below the divider */
+}
+
+.icon {
+  width: 30px;
+  height: 30px;
+}
+
+
+import React from 'react';
+import './DesignsPage.css';
+import firstImage from './testimage1.jpg';
+import secondImage from './testimage2.jpg';
+// Import your icons
+import customIcon from './icons/custom-icon.svg';
+import solutionIcon from './icons/solution-icon.svg';
+import detailIcon from './icons/detail-icon.svg';
+import functionalityIcon from './icons/functionality-icon.svg';
+import styleIcon from './icons/style-icon.svg';
+import approachIcon from './icons/approach-icon.svg';
+
+const DesignsPage = () => {
+    return (
+        <div className="designs-page">
+            <div className="introduction">
+                <h1></h1>
+                <p></p>
+            </div>
+            <div className="overlay">
+                <div className="image-container">
+                    <div className="cutout left-cutout" style={{ backgroundImage: `url(${firstImage})` }}></div>
+                    <div className="text-box text-box-one">
+                        <div className="feature">
+                            <img src={customIcon} alt="Custom" className="feature-icon icon" />
+                            <h3 className="feature-title">Custom Creations</h3>
+                            <p className="feature-description">Every design begins with a blank canvas, promising a unique and personalized touch that reflects your brand's identity.</p>
+                            <hr className="feature-divider" />
+                        </div>
+                        <div className="feature">
+                            <img src={solutionIcon} alt="Solutions" className="feature-icon icon" />
+                            <h3 className="feature-title">Innovative Solutions</h3>
+                            <p className="feature-description">Stay ahead of the curve with cutting-edge design trends that push the boundaries of creativity and functionality.</p>
+                            <hr className="feature-divider" />
+                        </div>
+                        <div className="feature">
+                            <img src={detailIcon} alt="Detail" className="feature-icon icon" />
+                            <h3 className="feature-title">Detail-Oriented</h3>
+                            <p className="feature-description">From the macro to the micro, every aspect of your design is crafted with precision and a keen eye for detail.</p>
+                            <hr className="feature-divider" />
+                        </div>
+                    </div>
+                </div>
+                <div className="image-container">
+                    <div className="cutout right-cutout" style={{ backgroundImage: `url(${secondImage})` }}></div>
+                    <div className="text-box text-box-two">
+                        <div className="feature">
+                            <img src={functionalityIcon} alt="Functionality" className="feature-icon icon" />
+                            <h3 className="feature-title">Flexible Functionality</h3>
+                            <p className="feature-description">Our designs are as flexible as they are beautiful, ensuring they adapt seamlessly to your project's requirements.</p>
+                            <hr className="feature-divider" />
+                        </div>
+                        <div className="feature">
+                            <img src={styleIcon} alt="Style" className="feature-icon icon" />
+                            <h3 className="feature-title">Sustainable Style</h3>
+                            <p className="feature-description">Go green with designs that prioritize eco-friendliness without compromising on aesthetic appeal.</p>
+                            <hr className="feature-divider" />
+                        </div>
+                        <div className="feature">
+                            <img src={approachIcon} alt="Approach" className="feature-icon icon" />
+                            <h3 className="feature-title">Client-Centric Approach</h3>
+                            <p className="feature-description">Your vision is our blueprint. We collaborate closely with you to bring your ideas to life in a way that exceeds expectations.</p>
+                            <hr className="feature-divider" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    );
+}
+
+export default DesignsPage;
+
