@@ -60,7 +60,7 @@ export default function App() {
 
     // Perform the data fetching or synchronization tasks
     syncWithAlgolia();
-    axios.get('http://localhost:1337/api/products?populate=*')
+    axios.get('https://kaas-test-1-90911d46768d.herokuapp.com/api/products?populate=*')
       .then(res => {
         setProducts(res.data.data);
       })

@@ -4,7 +4,7 @@ import axios from 'axios';
 // Hardcoding keys for local development - NOT recommended for production
 const client = algoliasearch('MXC1E9QBKG', '0c03543931ef72890e9de4c91c697d61');
 const index = client.initIndex('dev_MINA');
-const baseURL = 'http://localhost:1337'; // Your server's base URL
+const baseURL = 'https://kaas-test-1-90911d46768d.herokuapp.com/'; // Your server's base URL
 
 export const syncWithAlgolia = async () => {
   try {
