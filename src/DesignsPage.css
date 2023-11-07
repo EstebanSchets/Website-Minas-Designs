@@ -43,6 +43,22 @@
   @apply col-span-1 row-span-1 flex justify-center items-center;
 }
 
+/* Adjust the order on mobile screens */
+@media (max-width: 640px) { /* Adjust this to the breakpoint you are targeting */
+  .top-left {
+    @apply order-1;
+  }
+  .top-right {
+    @apply order-4;
+  }
+  .bottom-left {
+    @apply order-2;
+  }
+  .bottom-right {
+    @apply order-3;
+  }
+}
+
 /* Feature sections styled for text left alignment with responsive text sizing */
 .feature {
   @apply text-left;
