@@ -1,171 +1,69 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Ensure the main page fills at least the whole height of the screen and is centered */
 .designs-page {
-  position: relative;
-  width: 100%;
-  height: 100vh;
-  overflow: auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  /* Center the overlay */
+  @apply relative w-full min-h-screen overflow-auto flex justify-center items-center mt-24;
 }
 
+/* Responsive grid layout and padding */
 .overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 120%;
-  background: #FFF;
-  /* White background */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 10;
-  display: flex;
-  flex-direction: column;
-  /* Stack children vertically */
-  margin-top: 150px;
-  align-items: center;
+  @apply absolute top-0 left-0 w-full min-h-screen bg-white grid grid-cols-1 sm:grid-cols-2 grid-rows-2 gap-4 z-10 p-2 sm:p-5;
+}
+
+/* Center cutouts and text boxes within their grid cells, adjust sizing for smaller screens */
+.cutout-container {
+  @apply flex items-center justify-center relative;
 }
 
 .cutout {
-  width: 500px;
-  height: 500px;
-  background-size: cover;
-  background-position: center;
-  clip-path: circle(250px at center);
-  /* Create a circle cutout */
-  position: absolute;
-  /* We’ll position each cutout absolutely within the overlay */
+  @apply w-full max-w-[550px] h-auto bg-cover bg-center;
+  aspect-ratio: 1 / 1; /* This will ensure that the width and height are always the same */
+  clip-path: circle(50% at center); /* This will make the cutout a perfect circle */
 }
 
-.left-cutout {
-  /*background-repeat: no-repeat;*/
-  left: 350px;
-  /* Center horizontally */
-  top: -420px;
-  /* Center vertically */
-  /*transform: translate(-100%, -100%); /* Offset to the top left */
-}
-
-.right-cutout {
-  /*background-repeat: no-repeat;*/
-  left: 1050px;
-  /* Center horizontally */
-  top: 300px;
-  /* Center vertically */
-  /*transform: translate(0%, 50%); /* Offset to the bottom right */
-}
-
+/* Center introduction text - removed absolute positioning, with responsive padding */
 .introduction {
-  width: 100%;
-  padding: 20px;
-  text-align: center;
-  z-index: 20;
-  position: absolute;
-  top: 11%;
-  /* Increase this value to move the introduction text down */
-  left: 0;
+  @apply w-full p-2 sm:p-5 text-center z-20 flex justify-center items-center;
 }
 
+/* Flex container for images and text, with responsive adjustments */
 .image-container {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  width: 100%;
-  margin-bottom: 20px;
-  /* Space between image containers */
-  position: relative;
+  @apply flex items-center justify-center w-full;
 }
 
-.cutout-text {
-  margin-left: 300px;
-  /* Space between the cutout and text */
-  z-index: 20;
-}
-
-/* Base styles for all text boxes */
+/* Center text boxes within their grid cells - removed additional margin, with responsive font sizing */
 .text-box {
-  padding: 20px;
-  width: 400px;
-  /* Set this to whatever width you want */
-  height: 400px;
-  /* This will expand to fit the content */
-  box-sizing: border-box;
-  position: absolute;
-  /* Position absolutely within the nearest relative container */
-  font-family: 'Arial', sans-serif;
-  /* Choose your preferred font */
-  font-size: 12px;
-  /* overrided by funct font size per title and text */
-  color: #333;
-  /* Any color you prefer */
-  line-height: 1.6;
-  /* Adjusts the space between lines */
-  font-family: 'Montserrat', sans-serif;
-  text-transform: uppercase;
-  /* Makes all text uppercase */
-  font-weight: 700;
-  /* Montserrat's bold weight */
-  text-align: left;
+  @apply p-2 sm:p-5 w-full flex flex-col justify-center items-start text-left font-sans text-sm sm:text-base text-gray-800 leading-6 uppercase font-bold;
 }
 
-/* Styles for the first text box */
-.text-box-one {
-  position: absolute;
-  top: -510px;
-  /* Distance from the top of the nearest positioned ancestor */
-  left: 1100px;
-  /* Distance from the left of the nearest positioned ancestor */
-  /* You can adjust these pixel values to place the box exactly where you want */
+/* Ensure grid items are centered within their cells */
+.top-left, .bottom-right, .top-right, .bottom-left {
+  @apply col-span-1 row-span-1 flex justify-center items-center;
 }
 
-/* Styles for the second text box */
-.text-box-two {
-  position: absolute;
-  top: 180px;
-  /* Distance from the top of the nearest positioned ancestor */
-  left: 400px;
-  /* Distance from the left of the nearest positioned ancestor */
-  /* Adjust these values as needed for precise placement */
-}
-
+/* Feature sections styled for text left alignment with responsive text sizing */
 .feature {
-  text-align: left;
-  /* Centering the content */
+  @apply text-left;
 }
 
 .feature-icon {
-  width: 25px;
-  /* overiden by .icon*/
-  height: auto;
-  margin-bottom: 10px;
-  /* Space between icon and title */
+  @apply w-6 h-auto mb-2.5;
 }
 
 .feature-title {
-  font-size: 22px;
-  /* Adjust as needed */
-  margin-bottom: 15px;
-  /* Space between title and description */
+  @apply text-lg sm:text-xl mb-4 text-left;
 }
 
 .feature-description {
-  font-size: 14px;
-  /* Smaller font size for description */
-  color: #797474;
+  @apply text-sm sm:text-base text-gray-600 text-left;
 }
 
 .feature-divider {
-  border: none;
-  height: 2px;
-  background-color: #ccc;
-  /* Or any color you prefer */
-  margin: 20px 0;
-  /* Space above and below the divider */
+  @apply border-none h-0.5 bg-gray-300 my-5;
 }
 
 .icon {
-  width: 30px;
-  height: 30px;
+  @apply w-7 h-7;
 }
