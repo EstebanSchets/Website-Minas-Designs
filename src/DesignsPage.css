@@ -4,13 +4,15 @@
 
 /* Ensure the main page fills at least the whole height of the screen and is centered */
 .designs-page {
-  @apply relative w-full min-h-screen overflow-auto flex justify-center items-center mt-24;
+  @apply relative w-full min-h-screen overflow-auto flex justify-center items-center ; /* mt-24 might need to be adjusted to match your navbar's height */
 }
+
 
 /* Responsive grid layout and padding */
 .overlay {
-  @apply absolute top-0 left-0 w-full min-h-screen bg-white grid grid-cols-1 sm:grid-cols-2 grid-rows-2 gap-4 z-10 p-2 sm:p-5;
+  @apply absolute top-0 left-0 w-full min-h-screen bg-white grid grid-cols-1 sm:grid-cols-2 grid-rows-2 gap-4 z-10 p-2 sm:p-5 md:pt-40; /* Adds top padding of 5rem (80px) on screens 768px and wider */
 }
+
 
 /* Center cutouts and text boxes within their grid cells, adjust sizing for smaller screens */
 .cutout-container {
@@ -83,3 +85,4 @@
 .icon {
   @apply w-7 h-7;
 }
+

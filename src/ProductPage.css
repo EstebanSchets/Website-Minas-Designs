@@ -1,0 +1,50 @@
+.product-page-modal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+  }
+  
+  .product-page-content {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 3px 7px rgba(0,0,0,0.3);
+    max-width: 500px;
+    width: 90%; /* use percentage instead of fixed width */
+    position: relative;
+    margin: auto; /* this will help in centering the modal */
+  }
+  
+  .product-page-image {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 1rem;
+  }
+  
+  .product-page-close {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+  }
+  
+  /* Media Queries for smaller screens */
+  @media (max-width: 600px) {
+    .product-page-content {
+      padding: 1rem;
+      width: 95%; /* take up slightly more width on very small screens */
+    }
+    
+    .product-page-close {
+      top: 0.2rem;
+      right: 0.2rem;
+    }
+  }
+  
+  /* Ensure your images are responsive */
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  

@@ -1,0 +1,97 @@
+.new-navbar {
+  display: flex;
+  justify-content: center; /* Center the nav buttons on desktop */
+  align-items: center;
+  padding: 1rem 2rem;
+  background: transparent; /* Make navbar transparent */
+  position: fixed; /* Fixed at the top */
+  width: 100%;
+  z-index: 1000;
+  transition: background 0.3s ease;
+}
+
+.navbar-brand {
+  position: absolute; /* Brand is positioned absolutely to keep nav buttons centered */
+  left: 2rem; /* Adjust as needed */
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white; /* Set brand color */
+}
+
+.navbar-toggle {
+  display: none;
+  cursor: pointer;
+  position: absolute; /* Position it absolutely within the navbar */
+  right: 2rem; /* Adjust as needed */
+}
+
+.nav-menu {
+  display: flex;
+  gap: 1rem;
+  list-style-type: none; /* Remove bullet points from list items */
+}
+
+.nav-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  border-color: black;
+  border-width: 1px;
+  color: black; /* Text color when unselected */
+  background-color: white; /* Background color when unselected */
+  border-radius: 50%; /* Make it round */
+  width: 100px; /* Set the width for round shape */
+  height: 100px; /* Set the height for round shape */
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.nav-link.active {
+  background-color: black; /* Background color when selected */
+  color: white; /* Text color when selected */
+}
+
+@media (max-width: 768px) {
+  .new-navbar {
+    justify-content: space-between;
+  }
+
+  .navbar-brand,
+  .navbar-toggle {
+    position: fixed;
+  }
+
+  .nav-menu {
+    position: fixed;
+    flex-direction: column;
+    top: 0;
+    right: 0;
+    width: 50%; /* Full width on mobile */
+    height: 100vh;
+    background: white;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+    padding-top: 3rem;
+    gap: 0;
+    align-items: center;
+    z-index: 1000;
+  }
+
+  .nav-menu.open {
+    transform: translateX(0);
+  }
+
+  .navbar-toggle {
+    display: block;
+  }
+
+  .nav-link {
+    width: 100%; /* Full width links on mobile */
+    border-radius: 0; /* No border radius on mobile */
+    border-color: white;
+  }
+}
+.new-navbar.hidden {
+  transform: translateY(-100%); /* Move the navbar up out of view */
+  transition: transform 0.3s ease-in-out;
+}
