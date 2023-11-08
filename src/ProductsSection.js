@@ -51,8 +51,12 @@ const ProductsSection = () => {
     }));
   };
 
+
+
   return (
+    
     <div className="products-section">
+      <div class= "section-title-style">POPULAIR ITEMS</div>
       <Grid container spacing={3} justifyContent="center">
         {products.map((product) => (
           <Grid item xs={6} lg={3} key={product.objectID}>

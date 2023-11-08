@@ -42,9 +42,48 @@
     }
   }
   
-  /* Ensure your images are responsive */
-  img {
-    max-width: 100%;
-    height: auto;
+  .section-title-style {
+    font-size: 48px;        /* Large text size */
+    font-weight: bold;      /* Make it bold */
+    text-transform: uppercase; /* UPPERCASE LETTERS */
+    color: #2a2a2a;        /* Dark gray color, modern look */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Slight shadow for depth */
+    letter-spacing: 1.5px; /* Spacing out letters for a more elegant look */
+    margin-bottom: 20px;   /* Space below the title */
+    padding: 10px 0;       /* Padding above and below text */
+    border-bottom: 2px solid #b8b75c; /* A solid underline for emphasis */
+    display: inline-block; /* Allows the border to only take up the width of the text */
+    background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft box shadow for 3D effect */
+    border-radius: 4px;    /* Rounded corners */
+    transition: all 0.3s ease; /* Smooth transition for hover effects */
   }
   
+  .section-title-style:hover {
+    color: rgb(230, 227, 100); /* Change color on hover */
+    transform: translateY(-2px); /* Slight move upwards on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Increase shadow on hover */
+  }
+  
+  /* Media query for tablets */
+@media (max-width: 768px) {
+  .section-title-style {
+    font-size: 36px; /* Slightly smaller text size for tablet devices */
+    padding: 8px 0; /* Adjust padding */
+    margin-bottom: 15px; /* Adjust space below the title */
+    letter-spacing: 1px; /* Adjust letter spacing */
+    /* Adjust other properties as needed */
+  }
+}
+
+/* Media query for mobile devices */
+@media (max-width: 480px) {
+  .section-title-style {
+    font-size: 24px; /* Smaller text size for mobile devices */
+    padding: 5px 0; /* Smaller padding */
+    margin-bottom: 10px; /* Less space below the title */
+    letter-spacing: 0.5px; /* Less letter spacing */
+    border-bottom: 1px solid #b8b75c; /* Thinner underline */
+    /* Adjust other properties as needed */
+  }
+}

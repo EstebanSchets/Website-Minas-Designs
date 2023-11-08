@@ -23,6 +23,7 @@
   cursor: pointer;
   position: absolute; /* Position it absolutely within the navbar */
   right: 2rem; /* Adjust as needed */
+  
 }
 
 .nav-menu {
@@ -59,7 +60,8 @@
   .navbar-brand,
   .navbar-toggle {
     position: fixed;
-  }
+    
+      }
 
   .nav-menu {
     position: fixed;
@@ -83,6 +85,7 @@
 
   .navbar-toggle {
     display: block;
+    
   }
 
   .nav-link {
