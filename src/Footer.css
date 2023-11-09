@@ -1,0 +1,67 @@
+.site-footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+  }
+  
+  .footer-content p {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .social-links {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .social-links li {
+    display: inline;
+    margin: 0 10px;
+  }
+  
+  .social-links a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  .social-links a:hover {
+    text-decoration: underline;
+  }
+
+  .footer-contact-form {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  
+  .footer-contact-form h2 {
+    margin-bottom: 15px;
+  }
+  
+  .footer-contact-form form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .footer-contact-form input,
+  .footer-contact-form textarea {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .footer-contact-form button {
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .footer-contact-form button:hover {
+    background-color: #0056b3;
+  }
+  
+  

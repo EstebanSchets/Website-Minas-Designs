@@ -6,9 +6,12 @@ import Navbar from './Navbar';
 import HeaderSection from './HeaderSection';
 import ProductsSection from './ProductsSection';
 import SearchSection from './SearchSection';
+import ImageGridSection from './ImageGridSection'
 import DesignsPage from './DesignsPage';
 import theme from './Theme';
 import './App.css';
+import RealProductPage from './RealProductPage';
+import Footer from './Footer'; 
 
 export default function App() {
   return (
@@ -22,10 +25,13 @@ export default function App() {
                 <HeaderSection />
                 <SearchSection />
                 <ProductsSection />
+                <ImageGridSection/>
               </>
             } />
             <Route path="/designs" element={<DesignsPage />} />
+            <Route path="/products" element={<RealProductPage />} />
           </Routes>
+          <Footer /> {}
         </>
       </Router>
     </ThemeProvider>

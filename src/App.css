@@ -3,12 +3,14 @@
 body {
   /* This should be set in the useEffect hook in App.js */
 }
+
 /* Header styles */
 .header-section {
   background: url('./BGImage.jpg') center/cover no-repeat;
   min-height: 100vh;
-  cursor: none; /* This hides the cursor */
-  
+  cursor: none;
+  /* This hides the cursor */
+
 }
 
 .revealing-overlay {
@@ -28,9 +30,11 @@ body {
 
 .header-title {
   font-family: 'Oswald', sans-serif;
-  font-size: 5vw; /* Adjusted for responsiveness */
+  font-size: 5vw;
+  /* Adjusted for responsiveness */
   color: white;
-  margin: 0; /* Remove default margin */
+  margin: 0;
+  /* Remove default margin */
   text-align: center;
   z-index: 10000;
   margin: 0;
@@ -38,11 +42,12 @@ body {
   top: 50%;
   left: 50%;
   margin-right: -50%;
-  transform: translate(-50%, -50%) 
+  transform: translate(-50%, -50%)
 }
 
 .header-subtitle {
-  font-size: 3vh; /* Adjusted for responsiveness */
+  font-size: 3vh;
+  /* Adjusted for responsiveness */
   padding-bottom: 20px;
   padding-top: 250px;
   color: white;
@@ -52,21 +57,24 @@ body {
   top: 50%;
   left: 50%;
   margin-right: -50%;
-  transform: translate(-50%, -50%) 
+  transform: translate(-50%, -50%)
 }
 
 /* Responsive adjustments */
 @media (max-width: 600px) {
   .header-title {
-    font-size: 8vw; /* Larger size for better readability on small screens */
+    font-size: 8vw;
+    /* Larger size for better readability on small screens */
   }
 
   .header-subtitle {
-    font-size: 5vh; /* Larger size for better readability on small screens */
+    font-size: 5vh;
+    /* Larger size for better readability on small screens */
   }
 
   .header-section {
-    padding: 1rem; /* Reduce padding on small screens */
+    padding: 1rem;
+    /* Reduce padding on small screens */
   }
 }
 
@@ -101,12 +109,14 @@ body {
 
 
 .card {
-  box-shadow: 0px 0px 15px rgba(0,0,0,0.4);
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.4);
   transition: transform 0.3s ease-in-out;
   border-radius: 20px;
   overflow: hidden;
-  width: 100%; /* make card width responsive */
-  max-width: 300px; /* set max card width */
+  width: 100%;
+  /* make card width responsive */
+  max-width: 300px;
+  /* set max card width */
   height: auto;
   margin: 0 auto;
 }
@@ -124,37 +134,37 @@ body {
 .card .MuiCardMedia-root {
   object-fit: cover;
   width: 100%;
-  /* Take full width of the container */
+
   height: 250px;
-  /* Fixed height for all images */
+
   object-position: center;
-  /* Center the image within the element's box */
+
   border-radius: 20px 20px 0 0;
-  /* Rounded corners for top */
+
 }
 
 .card .MuiCardContent-root {
-  /* This targets the CardContent component */
+
   border-radius: 20px 20px 20px 20px;
-  /* Bottom corners rounded */
+
 
 }
 
-/* Regular button style */
+
 .card .button-class {
-  padding: 10px 24px; /* Larger padding on larger screens */
-  font-size: 1rem; /* Regular font size */
-  margin-top: 20px; /* Adjusted space above the button for small screens */
-  /* ... other styles ... */
+  padding: 10px 24px;
+  font-size: 1rem;
+  margin-top: 20px;
+
 }
 
-/* Smaller button style for screens smaller than 600px */
+
 @media (max-width: 600px) {
   .card .button-class {
-    padding: 4px 8px; /* Even smaller padding on small screens */
-    font-size: 0.7rem; /* Even smaller font size */
-    margin-top: 20px; /* Adjusted space above the button for small screens */
-    /* ... adjust other properties as needed ... */
+    padding: 4px 8px;
+    font-size: 0.7rem;
+    margin-top: 20px;
+
   }
 }
 

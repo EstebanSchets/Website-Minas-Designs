@@ -19,11 +19,19 @@
 }
 
 .navbar-toggle {
-  display: none;
+  display: none; /* Hide by default, will be shown in media query */
   cursor: pointer;
-  position: absolute; /* Position it absolutely within the navbar */
-  right: 2rem; /* Adjust as needed */
-  
+  position: absolute;
+  right: 2rem;
+  align-items: center;
+  justify-content: center;
+  width: 50px; /* Set initial size */
+  height: 50px; /* Set initial size */
+  z-index: 1001; /* Ensure it's above the nav-menu */
+}
+
+.customIconSize {
+  font-size: 3rem; /* Increased icon size */
 }
 
 .nav-menu {
@@ -37,7 +45,7 @@
   justify-content: center;
   align-items: center;
   text-decoration: none;
-  border-color: black;
+  border-color: rgb(255, 255, 255);
   border-width: 1px;
   color: black; /* Text color when unselected */
   background-color: white; /* Background color when unselected */
@@ -55,13 +63,17 @@
 @media (max-width: 768px) {
   .new-navbar {
     justify-content: space-between;
+    padding-top: 40px ;
   }
 
   .navbar-brand,
   .navbar-toggle {
     position: fixed;
-    
-      }
+  }
+
+  .navbar-toggle {
+    display: flex; /* Now visible */
+  }
 
   .nav-menu {
     position: fixed;
@@ -83,18 +95,16 @@
     transform: translateX(0);
   }
 
-  .navbar-toggle {
-    display: block;
-    
+  .close-icon {
+    color: #000; /* Visible on white background */
   }
 
   .nav-link {
     width: 100%; /* Full width links on mobile */
     border-radius: 0; /* No border radius on mobile */
-    border-color: white;
   }
 }
+
 .new-navbar.hidden {
   transform: translateY(-100%); /* Move the navbar up out of view */
-  transition: transform 0.3s ease-in-out;
 }

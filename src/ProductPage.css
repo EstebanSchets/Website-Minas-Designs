@@ -51,18 +51,18 @@
     letter-spacing: 1.5px; /* Spacing out letters for a more elegant look */
     margin-bottom: 20px;   /* Space below the title */
     padding: 10px 0;       /* Padding above and below text */
-    border-bottom: 2px solid #b8b75c; /* A solid underline for emphasis */
+    padding-left: 60px;
     display: inline-block; /* Allows the border to only take up the width of the text */
-    background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft box shadow for 3D effect */
-    border-radius: 4px;    /* Rounded corners */
+  
+    
+    
     transition: all 0.3s ease; /* Smooth transition for hover effects */
   }
   
   .section-title-style:hover {
-    color: rgb(230, 227, 100); /* Change color on hover */
-    transform: translateY(-2px); /* Slight move upwards on hover */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Increase shadow on hover */
+   
+  /*nothong here*/
+  
   }
   
   /* Media query for tablets */

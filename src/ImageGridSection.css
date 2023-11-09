@@ -1,0 +1,61 @@
+.image-grid-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Adjust the minmax for the size of your images */
+    justify-content: center;
+    gap: 20px; /* Increase gap to prevent overlap, adjust based on your actual needs */
+    padding: 20px; /* Add some padding to prevent the content from touching the edges */
+    padding-bottom: 150px;
+  }
+  
+  .image-container {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    padding-top: 100%; /* Keeps it square */
+    transform: rotate(45deg); /* Rotates to create diamond */
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .image-container::after { /* Counteract the hover effect to prevent overlay */
+    content: '';
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(255, 255, 255, 0.2);
+    transition: opacity 0.3s ease-in-out;
+    opacity: 0;
+  }
+  
+  .image-container:hover::after {
+    opacity: 1;
+  }
+  
+  .image-container:hover {
+    z-index: 2; /* Brings the hovered image to the top */
+  }
+  
+  .diamond-image {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: calc(100% * 1.414); /* Increase the size to cover the rotated square, sqrt(2) */
+    height: calc(100% * 1.414); /* Adjust width and height accordingly if it's not a square */
+    object-fit: cover;
+    transform: translate(-50%, -50%) rotate(-45deg); /* Aligns image properly within the container */
+  }
+  
+  @media (max-width: 600px) {
+    .image-grid-section { grid-template-columns: repeat(2, 1fr); /* 4 columns even on small screens */
+        margin-top: 70px;
+    }
+
+    .diamond-image {
+        width: 141%; /* Adjust if necessary to maintain the diamond shape */
+        height: 141%;
+      }
+
+
+  }

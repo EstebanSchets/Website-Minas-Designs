@@ -35,12 +35,13 @@ const NewNavbar = ({ activePage, setActivePage }) => {
 
   const pages = ["Home", "Products", "Designs", "About us", "Q&A"];
 
+
   return (
     <nav className={`new-navbar ${showNavbar ? '' : 'hidden'}`}>
-      
-      
+
+
       <div className="navbar-toggle" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
-        {isMobileMenuOpen ? <CloseIcon /> : <MenuIcon />}
+        {isMobileMenuOpen ? <CloseIcon fontSize="large" /> : <MenuIcon fontSize="large" className={`customIconSize ${isMobileMenuOpen ? 'open' : ''}`} />}
       </div>
       <div className={`nav-menu ${isMobileMenuOpen ? 'open' : ''}`}>
         {pages.map((page) => {

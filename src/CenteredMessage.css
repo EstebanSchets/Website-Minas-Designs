@@ -1,0 +1,28 @@
+/* CenteredMessage.css */
+
+.centered-message-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Use full viewport height */
+    text-align: center;
+    background-color: #f0f0f0; /* Light grey background, change as needed */
+    color: #333; /* Dark text color, change as needed */
+    padding: 16px; /* Add some padding */
+  }
+  
+  .centered-message-content {
+    /* If you want to add more styles to the content itself, like max-width or padding */
+    max-width: 600px; /* Max width of the inner content, can be changed */
+  }
+  
+  /* Styling for the heading */
+  .centered-message-container h1 {
+    font-size: 2em; /* Make the font larger or as needed */
+    margin: 0;
+    padding: 0;
+    color: #222; /* Slightly darker text color for the heading */
+    font-weight: normal; /* Normal weight or as needed */
+    line-height: 1.2; /* Good line-height for readability */
+  }
+  
